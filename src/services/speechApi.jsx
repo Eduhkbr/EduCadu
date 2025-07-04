@@ -4,6 +4,7 @@
 const speechApi = {
     synth: window.speechSynthesis,
     voices: {},
+    settings: { soundEnabled: true },
     loadVoices() {
         const allVoices = this.synth.getVoices();
         this.voices['pt-BR'] = allVoices.find(v => v.lang === 'pt-BR') || allVoices.find(v => v.lang.startsWith('pt'));

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import MenuView from './components/MenuView.jsx';
 import LearningView from './components/LearningView.jsx';
+import SettingsView from './components/SettingsView.jsx';
 import speechApi from './services/speechApi.jsx';
 
 // =================================================================
@@ -8,22 +9,45 @@ import speechApi from './services/speechApi.jsx';
 // =================================================================
 const App = () => {
     const [currentView, setCurrentView] = useState('menu');
+    const [settings, setSettings] = useState({
+        soundEnabled: true,
+        theme: 'default',
+    });
 
     useEffect(() => {
         speechApi.loadVoices();
-    }, []);
+        // Aplica a classe de tema ao body para que as variáveis CSS funcionem
+        document.body.className = `theme-${settings.theme}`;
+    }, [settings.theme]);
+
+    const handleUpdateSettings = (key, value) => {
+        const newSettings = { ...settings, [key]: value };
+        setSettings(newSettings);
+        if (key === 'soundEnabled') {
+            speechApi.updateSettings({ soundEnabled: value });
+        }
+    };
 
     const handleSelectCategory = (category) => setCurrentView(category);
+    const handleGoToSettings = () => setCurrentView('settings');
     const handleGoHome = () => setCurrentView('menu');
 
+    // A função que decide qual componente renderizar
+    const renderView = () => {
+        switch (currentView) {
+            case 'settings':
+                return <SettingsView settings={settings} onUpdateSettings={handleUpdateSettings} onGoHome={handleGoHome} />;
+            case 'menu':
+                return <MenuView onSelectCategory={handleSelectCategory} onGoToSettings={handleGoToSettings} currentTheme={settings.theme} />;
+            default:
+                return <LearningView category={currentView} onGoHome={handleGoHome} />;
+        }
+    };
+
     return (
-        <div className="bg-sky-100 flex items-center justify-center min-h-screen p-4" style={{fontFamily: "'Nunito', sans-serif"}}>
+        <div className="bg-[var(--bg-color)] flex items-center justify-center min-h-screen p-4 transition-colors duration-300" style={{ fontFamily: "'Nunito', sans-serif" }}>
             <div className="w-full max-w-4xl mx-auto">
-                {currentView === 'menu' ? (
-                    <MenuView onSelectCategory={handleSelectCategory} />
-                ) : (
-                    <LearningView category={currentView} onGoHome={handleGoHome} />
-                )}
+                {renderView()}
             </div>
         </div>
     );

@@ -1,0 +1,20 @@
+body.theme-default {
+    --bg-color: #E0F2FE; /* sky-100 */
+    --text-color: #0C4A6E; /* sky-800 */
+    --card-bg: white;
+    --button-text: white;
+}
+
+body.theme-calm {
+    --bg-color: #F3F4F6; /* gray-100 */
+    --text-color: #374151; /* gray-700 */
+    --card-bg: #E5E7EB;   /* gray-200 */
+    --button-text: #1F2937; /* gray-800 */
+}
+
+body.theme-high-contrast {
+    --bg-color: #000000; /* black */
+    --text-color: #FFFFFF; /* white */
+    --card-bg: #1F2937;   /* gray-800 */
+    --button-text: #000000;
+}
