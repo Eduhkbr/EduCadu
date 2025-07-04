@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import MenuView from './components/MenuView.jsx';
 import LearningView from './components/LearningView.jsx';
 import SettingsView from './components/SettingsView.jsx';
+import MemoryGameView from './components/MemoryGameView.jsx';
 import speechApi from './services/speechApi.jsx';
+import AnimalSubMenuView from "./components/AnimalSubMenuView.jsx";
 
 // =================================================================
 // RESPONSABILIDADE: Orquestrar a aplicação.
@@ -39,6 +41,12 @@ const App = () => {
                 return <SettingsView settings={settings} onUpdateSettings={handleUpdateSettings} onGoHome={handleGoHome} />;
             case 'menu':
                 return <MenuView onSelectCategory={handleSelectCategory} onGoToSettings={handleGoToSettings} currentTheme={settings.theme} />;
+            case 'animals_submenu':
+                return <AnimalSubMenuView onSelectActivity={handleSelectCategory} onGoHome={handleGoHome} />;
+            case 'animals_game':
+                return <MemoryGameView onGoHome={handleGoHome} />;
+            case 'animals':
+                return <LearningView category="animals" onGoHome={handleGoHome} />;
             default:
                 return <LearningView category={currentView} onGoHome={handleGoHome} />;
         }

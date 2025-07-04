@@ -10,6 +10,18 @@ const LearningView = ({ category, onGoHome }) => {
     const currentItem = categoryData[currentIndex];
     const translatedText = t(currentItem.textKey);
 
+    if (!categoryData || categoryData.length === 0) {
+        console.error(`Erro: A categoria "${category}" não foi encontrada nos dados.`);
+        return (
+            <div className="w-full h-full flex flex-col items-center justify-center text-center">
+                <p className="text-2xl text-red-500 mb-4">Oops! Algo deu errado.</p>
+                <button onClick={onGoHome} className="nav-button bg-white rounded-full p-5 shadow-lg text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" viewBox="0 0 24 24" fill="currentColor"><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"/></svg>
+                </button>
+            </div>
+        );
+    }
+
     useEffect(() => {
         speechApi.speak(translatedText, i18n.language === 'pt' ? 'pt-BR' : 'en-US');
     }, [currentItem, translatedText, i18n.language]);

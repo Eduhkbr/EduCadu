@@ -96,5 +96,9 @@
   "color_theme": "Tema de Cores",
   "theme_default": "Padrão",
   "theme_calm": "Calmo",
-  "theme_high_contrast": "Alto Contraste"
+  "theme_high_contrast": "Alto Contraste",
+  "memory_game_win": "Parabéns, você venceu!",
+  "play_again": "Jogar Novamente",
+  "memory_game_title": "Jogo da Memória",
+  "meet_the_animals_title": "Conhecer Animais"
 }
