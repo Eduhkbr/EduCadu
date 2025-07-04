@@ -1,3 +1,14 @@
+import dogImg from '../assets/img/dog.png';
+import catImg from '../assets/img/cat.png';
+import lionImg from '../assets/img/lion.png';
+import bearImg from '../assets/img/bear.png';
+import birdImg from '../assets/img/bird.png';
+import elephantImg from '../assets/img/elephant.png';
+import foxImg from '../assets/img/fox.png';
+import pigImg from '../assets/img/pig.png';
+import turtleImg from '../assets/img/turtle.png';
+import zebraImg from '../assets/img/zebra.png';
+
 // =================================================================
 // RESPONSABILIDADE: Conter todos os dados de conteúdo do aplicativo.
 // =================================================================
@@ -76,16 +87,16 @@ const contentData = {
         { display: '⬣', textKey: 'shape_hexagon', image: '' },
     ],
     animals: [
-        { displayKey: 'animal_dog_icon', textKey: 'animal_dog', image: 'https://placehold.co/400x300/795548/FFFFFF?text=🐶' },
-        { displayKey: 'animal_cat_icon', textKey: 'animal_cat', image: 'https://placehold.co/400x300/9E9E9E/FFFFFF?text=🐱' },
-        { displayKey: 'animal_lion_icon', textKey: 'animal_lion', image: 'https://placehold.co/400x300/FFC107/FFFFFF?text=🦁' },
-        { displayKey: 'animal_elephant_icon', textKey: 'animal_elephant', image: 'https://placehold.co/400x300/3F51B5/FFFFFF?text=🐘' },
-        { displayKey: 'animal_bear_icon', textKey: 'animal_bear', image: 'https://placehold.co/400x300/4CAF50/FFFFFF?text=🐻' },
-        { displayKey: 'animal_zebra_icon', textKey: 'animal_zebra', image: 'https://placehold.co/400x300/9C27B0/FFFFFF?text=🦓' },
-        { displayKey: 'animal_fox_icon', textKey: 'animal_fox', image: 'https://placehold.co/400x300/F44336/FFFFFF?text=🦊' },
-        { displayKey: 'animal_turtle_icon', textKey: 'animal_turtle', image: 'https://placehold.co/400x300/2196F3/FFFFFF?text=🐢' },
-        { displayKey: 'animal_bird_icon', textKey: 'animal_bird', image: 'https://placehold.co/400x300/FFEB3B/FFFFFF?text=🐦' },
-        { displayKey: 'animal_pig_icon', textKey: 'animal_pig', image: 'https://placehold.co/400x300/E91E63/FFFFFF?text=🐷' },
+        { displayKey: 'animal_dog_icon', textKey: 'animal_dog', image: dogImg },
+        { displayKey: 'animal_cat_icon', textKey: 'animal_cat', image: catImg },
+        { displayKey: 'animal_lion_icon', textKey: 'animal_lion', image: lionImg },
+        { displayKey: 'animal_bear_icon', textKey: 'animal_bear', image: bearImg },
+        { displayKey: 'animal_bird_icon', textKey: 'animal_bird', image: birdImg },
+        { displayKey: 'animal_elephant_icon', textKey: 'animal_elephant', image: elephantImg },
+        { displayKey: 'animal_fox_icon', textKey: 'animal_fox', image: foxImg },
+        { displayKey: 'animal_pig_icon', textKey: 'animal_pig', image: pigImg },
+        { displayKey: 'animal_turtle_icon', textKey: 'animal_turtle', image: turtleImg },
+        { displayKey: 'animal_zebra_icon', textKey: 'animal_zebra', image: zebraImg },
     ]
 };
 
