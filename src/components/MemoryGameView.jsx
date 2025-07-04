@@ -1,39 +1,43 @@
-// src/components/MemoryGameView.jsx
 import React, { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import contentData from '../data/contentData.jsx';
 import Card from './Card.jsx';
+import StarIcon from './StarIcon.jsx';
 
-const MemoryGameView = ({ onGoHome }) => {
+const MemoryGameView = ({ onGoHome, onGameWin }) => {
     const { t } = useTranslation();
     const [cards, setCards] = useState([]);
     const [flipped, setFlipped] = useState([]);
     const [matched, setMatched] = useState([]);
     const [isDisabled, setIsDisabled] = useState(false);
+    const [hasWon, setHasWon] = useState(false);
 
     const shuffleAndStartGame = useCallback(() => {
         const animalCards = contentData.animals;
-
-        console.log('Dados dos animais carregados:', animalCards);
-
         const duplicatedCards = [...animalCards, ...animalCards]
             .map((card, index) => ({ ...card, id: index }))
             .sort(() => Math.random() - 0.5);
-
-        console.log('Baralho de cartas pronto para o jogo:', duplicatedCards);
 
         setCards(duplicatedCards);
         setFlipped([]);
         setMatched([]);
         setIsDisabled(false);
+        setHasWon(false);
     }, []);
 
     useEffect(() => {
         shuffleAndStartGame();
     }, [shuffleAndStartGame]);
 
+    useEffect(() => {
+        if (matched.length > 0 && matched.length === contentData.animals.length && !hasWon) {
+            onGameWin();
+            setHasWon(true);
+        }
+    }, [matched, onGameWin, hasWon]);
+
     const handleCardClick = (clickedCard) => {
-        if (isDisabled || flipped.some(c => c.id === clickedCard.id) || matched.includes(clickedCard.textKey)) {
+        if (isDisabled || flipped.length === 2 || flipped.some(c => c.id === clickedCard.id) || matched.includes(clickedCard.textKey)) {
             return;
         }
 
@@ -55,12 +59,11 @@ const MemoryGameView = ({ onGoHome }) => {
         }
     };
 
-    const allPairsFound = matched.length === contentData.animals.length;
-
     return (
         <div className="w-full h-full flex flex-col items-center justify-center text-center">
-            {allPairsFound ? (
-                <div className="text-center">
+            {hasWon ? (
+                <div className="text-center flex flex-col items-center">
+                    <StarIcon className="w-24 h-24 text-yellow-400 mb-4" />
                     <h1 className="text-5xl font-black text-green-500 mb-4">{t('memory_game_win')}</h1>
                     <button onClick={shuffleAndStartGame} className="bg-white text-sky-700 font-bold py-3 px-6 rounded-full shadow-lg text-2xl">
                         {t('play_again')}
