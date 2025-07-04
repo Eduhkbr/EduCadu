@@ -100,5 +100,11 @@
   "memory_game_win": "Congratulations, you won!",
   "play_again": "Play Again",
   "memory_game_title": "Memory Game",
-  "meet_the_animals_title": "Meet the Animals"
+  "meet_the_animals_title": "Meet the Animals",
+  "drag_and_drop_game_title": "Drag and Drop Game",
+  "meet_the_alphabet_title": "Meet the Alphabet",
+  "drag_the_letter": "Drag the letter",
+  "correct": "Correct!",
+  "try_again": "Try again",
+  "next": "Next"
 }

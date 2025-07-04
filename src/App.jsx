@@ -4,6 +4,8 @@ import LearningView from './components/LearningView.jsx';
 import SettingsView from './components/SettingsView.jsx';
 import MemoryGameView from './components/MemoryGameView.jsx';
 import AnimalSubMenuView from './components/AnimalSubMenuView.jsx';
+import AlphabetSubMenuView from './components/AlphabetSubMenuView.jsx';
+import AlphabetDragGameView from './components/AlphabetDragGameView.jsx';
 import speechApi from './services/speechApi.jsx';
 
 const App = () => {
@@ -47,10 +49,13 @@ const App = () => {
                 return <SettingsView settings={settings} onUpdateSettings={handleUpdateSettings} onGoHome={handleGoHome} />;
             case 'menu':
                 return <MenuView onSelectCategory={handleSelectCategory} onGoToSettings={handleGoToSettings} currentTheme={settings.theme} rewards={rewards} />;
+            case 'alphabet_submenu':
+                return <AlphabetSubMenuView onSelectActivity={handleSelectCategory} onGoHome={handleGoHome} />;
+            case 'alphabet_drag_game':
+                return <AlphabetDragGameView onGoHome={handleGoHome} onGameWin={() => handleGameWin('alphabet_drag_game')} />;
             case 'animals_submenu':
                 return <AnimalSubMenuView onSelectActivity={handleSelectCategory} onGoHome={handleGoHome} />;
             case 'animals_game':
-                // Passa a função de vitória para o jogo
                 return <MemoryGameView onGoHome={handleGoHome} onGameWin={() => handleGameWin('animals_game')} />;
             default:
                 return <LearningView category={currentView} onGoHome={handleGoHome} />;

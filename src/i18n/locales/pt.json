@@ -100,5 +100,11 @@
   "memory_game_win": "Parabéns, você venceu!",
   "play_again": "Jogar Novamente",
   "memory_game_title": "Jogo da Memória",
-  "meet_the_animals_title": "Conhecer Animais"
+  "meet_the_animals_title": "Conhecer Animais",
+  "drag_and_drop_game_title": "Jogo de Arrastar",
+  "meet_the_alphabet_title": "Conhecer o Alfabeto",
+  "drag_the_letter": "Arraste a letra",
+  "correct": "Correto!",
+  "try_again": "Tente novamente",
+  "next": "Próximo"
 }
