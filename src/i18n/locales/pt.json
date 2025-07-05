@@ -106,5 +106,6 @@
   "drag_the_letter": "Arraste a letra",
   "correct": "Correto!",
   "try_again": "Tente novamente",
-  "next": "Próximo"
+  "next": "Próximo",
+  "speech_template_letter": "{{letter}} de {{word}}"
 }

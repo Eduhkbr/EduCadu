@@ -106,5 +106,7 @@
   "drag_the_letter": "Drag the letter",
   "correct": "Correct!",
   "try_again": "Try again",
-  "next": "Next"
+  "next": "Next",
+  "speech_template_consonant": "{{letter}} is for a {{word}}",
+  "speech_template_vowel": "{{letter}} is for an {{word}}"
 }
