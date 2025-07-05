@@ -117,5 +117,8 @@
   "pop_the_balloon_title": "Pop the Balloon",
   "meet_the_colors_title": "Meet the Colors",
   "pop_the_balloon_instruction": "Pop the {{color}} balloon",
-  "drag_the_letter_instruction": "Drag the letter {{letter}} to the correct picture"
+  "drag_the_letter_instruction": "Drag the letter {{letter}} to the correct picture",
+  "puzzle_game_title": "Puzzle Game",
+  "meet_the_shapes_title": "Meet the Shapes",
+  "puzzle_instruction": "Fit the {{shape}}"
 }

@@ -1,21 +1,26 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { useDraggable } from '@dnd-kit/core';
 
-const Draggable = ({ id, children }) => {
+const Draggable = forwardRef(({ id, children }, ref) => {
     const { attributes, listeners, setNodeRef, transform } = useDraggable({
-        id: id,
+        id,
     });
-
-    const style = transform ? {
-        transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
-        zIndex: 99,
-    } : undefined;
+    const style = transform
+        ? {
+            transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
+        }
+        : undefined;
 
     return (
-        <div ref={setNodeRef} style={style} className="touch-none" {...listeners} {...attributes}>
+        <div ref={(node) => {
+            setNodeRef(node);
+            if (ref) {
+                ref.current = node;
+            }
+        }} style={style} {...attributes} {...listeners}>
             {children}
         </div>
     );
-};
+});
 
 export default Draggable;

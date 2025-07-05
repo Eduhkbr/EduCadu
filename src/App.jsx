@@ -11,6 +11,8 @@ import NumberCountGameView from './components/NumberCountGameView.jsx';
 import speechApi from './services/speechApi.jsx';
 import ColorSubMenuView from "./components/ColorSubMenuView.jsx";
 import ColorPopGameView from "./components/ColorPopGameView.jsx";
+import ShapeSubMenuView from "./components/ShapeSubMenuView.jsx";
+import ShapePuzzleGameView from "./components/ShapePuzzleGameView.jsx";
 
 const App = () => {
     const [currentView, setCurrentView] = useState('menu');
@@ -69,6 +71,10 @@ const App = () => {
                 return <ColorSubMenuView onSelectActivity={handleSelectCategory} onGoHome={handleGoHome} />;
             case 'color_pop_game':
                 return <ColorPopGameView onGoHome={handleGoHome} onGameWin={() => handleGameWin('color_pop_game')} />;
+            case 'shape_submenu':
+                return <ShapeSubMenuView onSelectActivity={handleSelectCategory} onGoHome={handleGoHome} />;
+            case 'shape_puzzle_game':
+                return <ShapePuzzleGameView onGoHome={handleGoHome} onGameWin={() => handleGameWin('shape_puzzle_game')} />;
             default:
                 return <LearningView category={currentView} onGoHome={handleGoHome} />;
         }

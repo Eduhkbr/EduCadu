@@ -116,5 +116,8 @@
   "pop_the_balloon_title": "Estourar Balões",
   "meet_the_colors_title": "Conhecer as Cores",
   "pop_the_balloon_instruction": "Estoure o balão {{color}}",
-  "drag_the_letter_instruction": "Arraste a letra {{letter}} para a figura correta"
+  "drag_the_letter_instruction": "Arraste a letra {{letter}} para a figura correta",
+  "puzzle_game_title": "Quebra-Cabeça",
+  "meet_the_shapes_title": "Conhecer as Formas",
+  "puzzle_instruction": "Encaixe o {{shape}}"
 }

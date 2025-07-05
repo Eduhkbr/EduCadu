@@ -26,7 +26,8 @@ const MenuView = ({ onSelectCategory, onGoToSettings, currentTheme, rewards }) =
                     bgColor="bg-green-400"
                     icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 md:h-24 md:w-24" viewBox="0 0 24 24" fill="currentColor"><path d="M12,2,2,22H22Z"/></svg>}
                     title={t('category_shapes')}
-                    onClick={() => onSelectCategory('shapes')}
+                    onClick={() => onSelectCategory('shape_submenu')}
+                    isComplete={rewards.shape_puzzle_game}
                 />
                 <MenuButton
                     bgColor="bg-yellow-400"
