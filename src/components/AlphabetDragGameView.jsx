@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { DndContext } from '@dnd-kit/core';
+import { DndContext, PointerSensor, TouchSensor, useSensor, useSensors } from '@dnd-kit/core';
 import { useTranslation } from 'react-i18next';
 import Draggable from './Draggable';
 import Droppable from './Droppable';
@@ -11,6 +11,16 @@ const AlphabetDragGameView = ({ onGoHome, onGameWin }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isCorrect, setIsCorrect] = useState(null); // null, true, or false
     const [shuffledTargets, setShuffledTargets] = useState([]);
+
+    const sensors = useSensors(
+        useSensor(PointerSensor),
+        useSensor(TouchSensor, {
+            activationConstraint: {
+                delay: 250,
+                tolerance: 5,
+            },
+        })
+    );
 
     const currentItem = contentData.abc[currentIndex];
 
@@ -47,7 +57,7 @@ const AlphabetDragGameView = ({ onGoHome, onGameWin }) => {
     }
 
     return (
-        <DndContext onDragEnd={handleDragEnd}>
+        <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
             <div className="w-full h-full flex flex-col items-center justify-between text-center p-4">
                 {/* Área de Arrastar (a letra) */}
                 <div className="flex flex-col items-center">
