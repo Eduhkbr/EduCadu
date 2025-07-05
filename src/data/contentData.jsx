@@ -84,7 +84,6 @@ const contentData = {
         { display: '■', textKey: 'shape_square', image: '' },
         { display: '▲', textKey: 'shape_triangle', image: '' },
         { display: '★', textKey: 'shape_star', image: '' },
-        { display: '◇', textKey: 'shape_diamond', image: '' },
         { display: '❤', textKey: 'shape_heart', image: '' },
         { display: '✚', textKey: 'shape_cross', image: '' },
         { display: '⬟', textKey: 'shape_pentagon', image: '' },
