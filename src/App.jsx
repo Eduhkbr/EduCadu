@@ -13,15 +13,15 @@ import ColorSubMenuView from "./components/ColorSubMenuView.jsx";
 import ColorPopGameView from "./components/ColorPopGameView.jsx";
 import ShapeSubMenuView from "./components/ShapeSubMenuView.jsx";
 import ShapePuzzleGameView from "./components/ShapePuzzleGameView.jsx";
+import LandingPageView from "./components/LandingPageView.jsx";
 
 const App = () => {
-    const [currentView, setCurrentView] = useState('menu');
+    const [currentView, setCurrentView] = useState('landing');
     const [settings, setSettings] = useState({
         soundEnabled: true,
         theme: 'default',
     });
 
-    // Estado para guardar as recompensas
     const [rewards, setRewards] = useState({});
 
     useEffect(() => {
@@ -37,7 +37,6 @@ const App = () => {
         }
     };
 
-    // Função para registrar a vitória em um jogo
     const handleGameWin = (gameId) => {
         setRewards(prevRewards => ({
             ...prevRewards,
@@ -47,10 +46,14 @@ const App = () => {
 
     const handleSelectCategory = (category) => setCurrentView(category);
     const handleGoToSettings = () => setCurrentView('settings');
+
     const handleGoHome = () => setCurrentView('menu');
+    const handleStart = () => setCurrentView('menu');
 
     const renderView = () => {
         switch (currentView) {
+            case 'landing':
+                return <LandingPageView onStart={handleStart} currentTheme={settings.theme} />;
             case 'settings':
                 return <SettingsView settings={settings} onUpdateSettings={handleUpdateSettings} onGoHome={handleGoHome} />;
             case 'menu':
@@ -82,7 +85,7 @@ const App = () => {
 
     return (
         <div className="bg-[var(--bg-color)] flex items-center justify-center min-h-screen p-4" style={{ fontFamily: "'Nunito', sans-serif" }}>
-            <div className="w-full max-w-4xl mx-auto">
+            <div className="w-full max-w-5xl mx-auto">
                 {renderView()}
             </div>
         </div>
