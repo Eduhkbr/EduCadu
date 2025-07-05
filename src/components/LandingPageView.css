@@ -1,0 +1,251 @@
+.landing-page {
+    font-family: 'Nunito', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+.theme-wrapper {
+    width: 100%;
+    max-width: 1200px;
+}
+
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 20px;
+}
+
+
+.hero-content {
+    text-align: left;
+    max-width: 50%;
+}
+
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+
+.hero-cta {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+
+.hero-cta:hover {
+    transform: scale(1.05);
+}
+
+
+.hero-image-container {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.hero-image {
+    background-color: #e0f7fa;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+    aspect-ratio: 16 / 9;
+}
+
+
+.highlights {
+    padding: 60px 20px;
+    background: var(--card-bg);
+    border-radius: 20px;
+    margin-top: 40px;
+}
+
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+
+@media (min-width: 768px) {
+    .highlights-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+.highlight-item {
+    text-align: center;
+    padding: 30px;
+}
+
+
+.highlight-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 1.5rem;
+}
+
+
+.highlight-item h3 {
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+
+.highlight-item p {
+    line-height: 1.6;
+}
+
+
+.safe-world {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 20px;
+    margin-top: 60px;
+}
+
+
+.safe-world-content {
+    text-align: left;
+    max-width: 50%;
+}
+
+
+.safe-world-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+
+.safe-world-desc {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+
+.safety-badges {
+    display: flex;
+    gap: 15px;
+}
+
+
+.safety-badge {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+
+.safe-world-image-container {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.safe-world-image {
+    background-color: #c8e6c9;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+    aspect-ratio: 16 / 9;
+}
+
+
+/* Footer */
+.landing-footer {
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-color-secondary);
+    margin-top: 60px;
+}
+
+
+.placeholder-animation {
+    animation: pulse 2s infinite alternate;
+}
+
+
+@keyframes pulse {
+    from { opacity: 0.8; }
+    to { opacity: 1; }
+}
+
+
+/* Media Query para telas menores */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .hero-content {
+        max-width: 100%;
+        margin-top: 40px;
+    }
+    .hero-image-container {
+        width: 80%;
+    }
+    .safe-world {
+        flex-direction: column;
+        text-align: center;
+    }
+    .safe-world-content {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+    .safe-world-image-container {
+        width: 80%;
+    }
+    .safety-badges {
+        justify-content: center;
+    }
+}

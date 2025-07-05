@@ -132,5 +132,9 @@
   "landing_activities_title": "Fun Activities",
   "landing_for_parents_title": "For Parents and Educators",
   "landing_for_parents_desc": "EduCadu was created with a focus on safety and child development. No ads and with carefully selected content to stimulate memory, reasoning, and creativity.",
-  "landing_footer": "Created with ❤️ by EduHKBR. An open-source project."
+  "landing_footer": "Created with ❤️ by EduHKBR. An open-source project.",
+  "safety_badge_no_ads": "No Ads",
+  "safety_badge_verified_content": "Verified Content",
+  "safety_badge_no_data_collection": "Privacy Guaranteed",
+  "theme_wrapper": ""
 }

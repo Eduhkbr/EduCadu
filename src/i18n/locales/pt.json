@@ -131,5 +131,9 @@
   "landing_activities_title": "Atividades Divertidas",
   "landing_for_parents_title": "Para Pais e Educadores",
   "landing_for_parents_desc": "O EduCadu foi criado com foco na segurança e no desenvolvimento infantil. Sem anúncios e com conteúdo cuidadosamente selecionado para estimular a memória, o raciocínio e a criatividade.",
-  "landing_footer": "Criado com ❤️ por EduHKBR. Um projeto de código aberto."
+  "landing_footer": "Criado com ❤️ por EduHKBR. Um projeto de código aberto.",
+  "safety_badge_no_ads": "Sem Anúncios",
+  "safety_badge_verified_content": "Conteúdo Verificado",
+  "safety_badge_no_data_collection": "Privacidade Garantida",
+  "theme_wrapper": ""
 }
