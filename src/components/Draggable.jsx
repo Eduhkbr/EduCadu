@@ -5,9 +5,11 @@ const Draggable = forwardRef(({ id, children }, ref) => {
     const { attributes, listeners, setNodeRef, transform } = useDraggable({
         id,
     });
+
     const style = transform
         ? {
             transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
+            touchAction: 'none',
         }
         : undefined;
 
