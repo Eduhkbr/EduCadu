@@ -40,8 +40,8 @@ const AlphabetDragGameView = ({ onGoHome, onGameWin }) => {
         if (currentIndex < contentData.abc.length - 1) {
             setCurrentIndex(currentIndex + 1);
         } else {
-            // Fim de jogo
             onGameWin();
+            onGoHome();
         }
     };
 
