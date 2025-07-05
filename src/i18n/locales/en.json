@@ -119,5 +119,18 @@
   "drag_the_letter_instruction": "Drag the letter {{letter}} to the correct picture",
   "puzzle_game_title": "Puzzle Game",
   "meet_the_shapes_title": "Meet the Shapes",
-  "puzzle_instruction": "Fit the {{shape}}"
+  "puzzle_instruction": "Fit the {{shape}}",
+  "landing_title": "EduCadu: Where Learning is Child's Play.",
+  "landing_subtitle": "A fun, safe, and educational app for children to explore the world of knowledge.",
+  "landing_cta": "Start Playing!",
+  "landing_feature_pwa_title": "Take it With You",
+  "landing_feature_pwa_desc": "Install EduCadu on the home screen of your phone or computer for quick access, just like a native app.",
+  "landing_feature_accessibility_title": "Accessible for All",
+  "landing_feature_accessibility_desc": "With high-contrast themes, sound controls, and narration, we ensure an inclusive experience.",
+  "landing_feature_bilingual_title": "Bilingual",
+  "landing_feature_bilingual_desc": "Learn in Portuguese and English! Perfect for expanding vocabulary in two languages.",
+  "landing_activities_title": "Fun Activities",
+  "landing_for_parents_title": "For Parents and Educators",
+  "landing_for_parents_desc": "EduCadu was created with a focus on safety and child development. No ads and with carefully selected content to stimulate memory, reasoning, and creativity.",
+  "landing_footer": "Created with ❤️ by EduHKBR. An open-source project."
 }

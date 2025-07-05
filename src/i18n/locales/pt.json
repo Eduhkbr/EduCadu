@@ -118,5 +118,18 @@
   "drag_the_letter_instruction": "Arraste a letra {{letter}} para a figura correta",
   "puzzle_game_title": "Quebra-Cabeça",
   "meet_the_shapes_title": "Conhecer as Formas",
-  "puzzle_instruction": "Encaixe o {{shape}}"
+  "puzzle_instruction": "Encaixe o {{shape}}",
+  "landing_title": "EduCadu: Onde Aprender é uma Brincadeira.",
+  "landing_subtitle": "Um aplicativo educacional, divertido e seguro para crianças explorarem o mundo do conhecimento.",
+  "landing_cta": "Começar a Brincar!",
+  "landing_feature_pwa_title": "Leve com Você",
+  "landing_feature_pwa_desc": "Instale o EduCadu na tela inicial do celular ou computador para acesso rápido, como um aplicativo nativo.",
+  "landing_feature_accessibility_title": "Acessível para Todos",
+  "landing_feature_accessibility_desc": "Com temas de alto contraste, controle de sons e narração, garantimos uma experiência inclusiva.",
+  "landing_feature_bilingual_title": "Bilíngue",
+  "landing_feature_bilingual_desc": "Aprenda em Português e Inglês! Perfeito para expandir o vocabulário em dois idiomas.",
+  "landing_activities_title": "Atividades Divertidas",
+  "landing_for_parents_title": "Para Pais e Educadores",
+  "landing_for_parents_desc": "O EduCadu foi criado com foco na segurança e no desenvolvimento infantil. Sem anúncios e com conteúdo cuidadosamente selecionado para estimular a memória, o raciocínio e a criatividade.",
+  "landing_footer": "Criado com ❤️ por EduHKBR. Um projeto de código aberto."
 }
