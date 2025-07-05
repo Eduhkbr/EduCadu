@@ -16,21 +16,24 @@ const MenuView = ({ onSelectCategory, onGoToSettings, currentTheme, rewards }) =
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
                 <MenuButton bgColor="bg-red-400" icon="ABC" title={t('category_alphabet')} onClick={() => onSelectCategory('alphabet_submenu')}
                             isComplete={rewards.alphabet_drag_game} />
-                <MenuButton bgColor="bg-blue-400" icon="123" title={t('category_numbers')} onClick={() => onSelectCategory('123')} />
+                <MenuButton
+                    bgColor="bg-blue-400"
+                    icon="123"
+                    title={t('category_numbers')}
+                    onClick={() => onSelectCategory('number_submenu')}
+                    isComplete={rewards.number_count_game}/>
                 <MenuButton bgColor="bg-green-400" icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 md:h-24 md:w-24" viewBox="0 0 24 24" fill="currentColor"><path d="M12,2,2,22H22Z"/></svg>} title={t('category_shapes')} onClick={() => onSelectCategory('shapes')} />
                 <MenuButton
                     bgColor="bg-yellow-400"
                     icon={<img src={colorsIcon} alt="Colors Icon" className="h-16 w-16 md:h-24 md:w-24 object-contain"/>}
                     title={t('category_colors')}
-                    onClick={() => onSelectCategory('colors')}
-                />
+                    onClick={() => onSelectCategory('colors')}/>
                 <MenuButton
                     bgColor="bg-orange-400"
                     icon={<img src={animalsIcon} alt="Animals Icon" className="h-16 w-16 md:h-24 md:w-24 object-contain"/>}
                     title={t('category_animals')}
                     onClick={() => onSelectCategory('animals_submenu')}
-                    isComplete={rewards.animals_game}
-                />
+                    isComplete={rewards.animals_game}/>
             </div>
         </div>
     );

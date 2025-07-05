@@ -8,11 +8,16 @@ import foxImg from '../assets/img/fox.png';
 import pigImg from '../assets/img/pig.png';
 import turtleImg from '../assets/img/turtle.png';
 import zebraImg from '../assets/img/zebra.png';
+import ballImg from '../assets/img/ball.png';
 
 // =================================================================
 // RESPONSABILIDADE: Conter todos os dados de conteúdo do aplicativo.
 // =================================================================
 const contentData = {
+    counting_item: {
+        image: ballImg,
+        alt: 'Bola'
+    },
     abc: [
         { display: 'A', textKey: 'alphabet_animal', image: 'https://placehold.co/400x300/FFC107/FFFFFF?text=A' },
         { display: 'B', textKey: 'alphabet_ball', image: 'https://placehold.co/400x300/3F51B5/FFFFFF?text=B' },

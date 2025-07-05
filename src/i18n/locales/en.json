@@ -108,5 +108,11 @@
   "try_again": "Try again",
   "next": "Next",
   "speech_template_consonant": "{{letter}} is for a {{word}}",
-  "speech_template_vowel": "{{letter}} is for an {{word}}"
+  "speech_template_vowel": "{{letter}} is for an {{word}}",
+  "counting_game_title": "Counting Game",
+  "meet_the_numbers_title": "Meet the Numbers",
+  "how_many_items": "How many balls are below?",
+  "next_level": "Next Level",
+  "next_round": "Next Round",
+  "finish_level": "Finish Level"
 }

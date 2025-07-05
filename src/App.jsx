@@ -6,6 +6,8 @@ import MemoryGameView from './components/MemoryGameView.jsx';
 import AnimalSubMenuView from './components/AnimalSubMenuView.jsx';
 import AlphabetSubMenuView from './components/AlphabetSubMenuView.jsx';
 import AlphabetDragGameView from './components/AlphabetDragGameView.jsx';
+import NumberSubMenuView from './components/NumberSubMenuView.jsx';
+import NumberCountGameView from './components/NumberCountGameView.jsx';
 import speechApi from './services/speechApi.jsx';
 
 const App = () => {
@@ -49,6 +51,10 @@ const App = () => {
                 return <SettingsView settings={settings} onUpdateSettings={handleUpdateSettings} onGoHome={handleGoHome} />;
             case 'menu':
                 return <MenuView onSelectCategory={handleSelectCategory} onGoToSettings={handleGoToSettings} currentTheme={settings.theme} rewards={rewards} />;
+            case 'number_submenu':
+                return <NumberSubMenuView onSelectActivity={handleSelectCategory} onGoHome={handleGoHome} />;
+            case 'number_count_game':
+                return <NumberCountGameView onGoHome={handleGoHome} onGameWin={() => handleGameWin('number_count_game')} />;
             case 'alphabet_submenu':
                 return <AlphabetSubMenuView onSelectActivity={handleSelectCategory} onGoHome={handleGoHome} />;
             case 'alphabet_drag_game':

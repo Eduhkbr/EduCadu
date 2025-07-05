@@ -107,5 +107,11 @@
   "correct": "Correto!",
   "try_again": "Tente novamente",
   "next": "Próximo",
-  "speech_template_letter": "{{letter}} de {{word}}"
+  "speech_template_letter": "{{letter}} de {{word}}",
+  "counting_game_title": "Jogo de Contar",
+  "meet_the_numbers_title": "Conhecer os Números",
+  "how_many_items": "Quantas bolas tem abaixo?",
+  "next_level": "Próximo Nível",
+  "next_round": "Próxima Rodada",
+  "finish_level": "Finalizar Nível"
 }
