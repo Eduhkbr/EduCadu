@@ -77,8 +77,7 @@ const contentData = {
         { display: '#9C27B0', textKey: 'color_purple', image: '' },
         { display: '#607D8B', textKey: 'color_grey', image: '' },
         { display: '#795548', textKey: 'color_brown', image: '' },
-        { display: '#E91E63', textKey: 'color_pink', image: '' },
-        { display: '#00BCD4', textKey: 'color_cyan', image: '' },
+        { display: 'rgba(255,87,147,0.85)', textKey: 'color_pink', image: '' },
     ],
     shapes: [
         { display: '●', textKey: 'shape_circle', image: '' },

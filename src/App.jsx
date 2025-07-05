@@ -9,6 +9,8 @@ import AlphabetDragGameView from './components/AlphabetDragGameView.jsx';
 import NumberSubMenuView from './components/NumberSubMenuView.jsx';
 import NumberCountGameView from './components/NumberCountGameView.jsx';
 import speechApi from './services/speechApi.jsx';
+import ColorSubMenuView from "./components/ColorSubMenuView.jsx";
+import ColorPopGameView from "./components/ColorPopGameView.jsx";
 
 const App = () => {
     const [currentView, setCurrentView] = useState('menu');
@@ -63,6 +65,10 @@ const App = () => {
                 return <AnimalSubMenuView onSelectActivity={handleSelectCategory} onGoHome={handleGoHome} />;
             case 'animals_game':
                 return <MemoryGameView onGoHome={handleGoHome} onGameWin={() => handleGameWin('animals_game')} />;
+            case 'color_submenu':
+                return <ColorSubMenuView onSelectActivity={handleSelectCategory} onGoHome={handleGoHome} />;
+            case 'color_pop_game':
+                return <ColorPopGameView onGoHome={handleGoHome} onGameWin={() => handleGameWin('color_pop_game')} />;
             default:
                 return <LearningView category={currentView} onGoHome={handleGoHome} />;
         }

@@ -60,7 +60,6 @@
   "color_grey": "Cinza",
   "color_brown": "Marrom",
   "color_pink": "Rosa",
-  "color_cyan": "Ciano",
   "shape_circle": "Círculo",
   "shape_square": "Quadrado",
   "shape_triangle": "Triângulo",
@@ -113,5 +112,8 @@
   "how_many_items": "Quantas bolas tem abaixo?",
   "next_level": "Próximo Nível",
   "next_round": "Próxima Rodada",
-  "finish_level": "Finalizar Nível"
+  "finish_level": "Finalizar Nível",
+  "pop_the_balloon_title": "Estourar Balões",
+  "meet_the_colors_title": "Conhecer as Cores",
+  "pop_the_balloon_instruction": "Estoure o balão {{color}}"
 }

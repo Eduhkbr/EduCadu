@@ -60,7 +60,6 @@
   "color_grey": "Grey",
   "color_brown": "Brown",
   "color_pink": "Pink",
-  "color_cyan": "Cyan",
   "shape_circle": "Circle",
   "shape_square": "Square",
   "shape_triangle": "Triangle",
@@ -114,5 +113,8 @@
   "how_many_items": "How many balls are below?",
   "next_level": "Next Level",
   "next_round": "Next Round",
-  "finish_level": "Finish Level"
+  "finish_level": "Finish Level",
+  "pop_the_balloon_title": "Pop the Balloon",
+  "meet_the_colors_title": "Meet the Colors",
+  "pop_the_balloon_instruction": "Pop the {{color}} balloon"
 }
