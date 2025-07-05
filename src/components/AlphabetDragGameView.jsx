@@ -5,11 +5,12 @@ import Draggable from './Draggable';
 import Droppable from './Droppable';
 import contentData from '../data/contentData';
 import StarIcon from './StarIcon';
+import speechApi from '../services/speechApi';
 
 const AlphabetDragGameView = ({ onGoHome, onGameWin }) => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [isCorrect, setIsCorrect] = useState(null); // null, true, or false
+    const [isCorrect, setIsCorrect] = useState(null);
     const [shuffledTargets, setShuffledTargets] = useState([]);
 
     const sensors = useSensors(
@@ -34,7 +35,12 @@ const AlphabetDragGameView = ({ onGoHome, onGameWin }) => {
         const targets = [currentItem, ...incorrectItems].sort(() => 0.5 - Math.random());
         setShuffledTargets(targets);
         setIsCorrect(null);
-    }, [currentIndex, currentItem]);
+
+        const instruction = t('drag_the_letter_instruction', { letter: currentItem.display });
+        speechApi.speak(instruction, i18n.language === 'pt' ? 'pt-BR' : 'en-US');
+
+    }, [currentIndex, currentItem, t, i18n.language]); // Adicionadas dependências
+
 
     const handleNext = () => {
         if (currentIndex < contentData.abc.length - 1) {
@@ -61,7 +67,9 @@ const AlphabetDragGameView = ({ onGoHome, onGameWin }) => {
             <div className="w-full h-full flex flex-col items-center justify-between text-center p-4">
                 {/* Área de Arrastar (a letra) */}
                 <div className="flex flex-col items-center">
-                    <p className="text-2xl font-bold text-[var(--text-color)] mb-4">{t('drag_the_letter')}</p>
+                    <p className="text-2xl font-bold text-[var(--text-color)] mb-4">
+                        {t('drag_the_letter_instruction', { letter: currentItem.display })}
+                    </p>
                     <Draggable id={currentItem.display}>
                         <div className="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center text-6xl font-black text-sky-600 cursor-grab active:cursor-grabbing">
                             {currentItem.display}

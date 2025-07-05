@@ -115,5 +115,6 @@
   "finish_level": "Finalizar Nível",
   "pop_the_balloon_title": "Estourar Balões",
   "meet_the_colors_title": "Conhecer as Cores",
-  "pop_the_balloon_instruction": "Estoure o balão {{color}}"
+  "pop_the_balloon_instruction": "Estoure o balão {{color}}",
+  "drag_the_letter_instruction": "Arraste a letra {{letter}} para a figura correta"
 }

@@ -116,5 +116,6 @@
   "finish_level": "Finish Level",
   "pop_the_balloon_title": "Pop the Balloon",
   "meet_the_colors_title": "Meet the Colors",
-  "pop_the_balloon_instruction": "Pop the {{color}} balloon"
+  "pop_the_balloon_instruction": "Pop the {{color}} balloon",
+  "drag_the_letter_instruction": "Drag the letter {{letter}} to the correct picture"
 }
