@@ -1,5 +1,12 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { DndContext, PointerSensor, TouchSensor, useSensor, useSensors } from '@dnd-kit/core';
+import { 
+    DndContext, 
+    PointerSensor, 
+    TouchSensor, 
+    useSensor, 
+    useSensors, 
+    closestCenter 
+} from '@dnd-kit/core';
 import { useTranslation } from 'react-i18next';
 import Draggable from './Draggable';
 import Droppable from './Droppable';
@@ -13,6 +20,7 @@ const AlphabetDragGameView = ({ onGoHome, onGameWin }) => {
     const [isCorrect, setIsCorrect] = useState(null);
     const [shuffledTargets, setShuffledTargets] = useState([]);
 
+    // Configuração de sensores otimizada
     const sensors = useSensors(
         useSensor(PointerSensor, {
             activationConstraint: {
@@ -21,7 +29,7 @@ const AlphabetDragGameView = ({ onGoHome, onGameWin }) => {
         }),
         useSensor(TouchSensor, {
             activationConstraint: {
-                delay: 0, // Remove qualquer delay
+                delay: 0,
                 distance: 1, // Ativa o arrasto com o menor movimento
                 tolerance: 5
             }
@@ -44,8 +52,7 @@ const AlphabetDragGameView = ({ onGoHome, onGameWin }) => {
         const instruction = t('drag_the_letter_instruction', { letter: currentItem.display });
         speechApi.speak(instruction, i18n.language === 'pt' ? 'pt-BR' : 'en-US');
 
-    }, [currentIndex, currentItem, t, i18n.language]); // Adicionadas dependências
-
+    }, [currentIndex, currentItem, t, i18n.language]);
 
     const handleNext = () => {
         if (currentIndex < contentData.abc.length - 1) {
@@ -57,8 +64,10 @@ const AlphabetDragGameView = ({ onGoHome, onGameWin }) => {
     };
 
     function handleDragEnd(event) {
-        if (event.over) {
-            if (event.over.id === event.active.id) {
+        const { active, over } = event;
+
+        if (over && active) {
+            if (over.id === active.id) {
                 setIsCorrect(true);
             } else {
                 setIsCorrect(false);
@@ -67,49 +76,51 @@ const AlphabetDragGameView = ({ onGoHome, onGameWin }) => {
         }
     }
 
+    // Adiciona preventDefault para eventos de toque
+    useEffect(() => {
+        const preventDefault = (e) => {
+            e.preventDefault();
+        };
+
+        document.addEventListener('touchstart', preventDefault, { passive: false });
+        document.addEventListener('touchmove', preventDefault, { passive: false });
+
+        return () => {
+            document.removeEventListener('touchstart', preventDefault);
+            document.removeEventListener('touchmove', preventDefault);
+        };
+    }, []);
+
     return (
-        <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
-            <div className="w-full h-full flex flex-col items-center justify-between text-center p-4">
+        <DndContext 
+            sensors={sensors}
+            collisionDetection={closestCenter}
+            onDragEnd={handleDragEnd}
+        >
+            <div 
+                className="w-full h-full flex flex-col items-center justify-between text-center p-4"
+                style={{
+                    touchAction: 'none', // Impede scroll e zoom
+                    userSelect: 'none',
+                    WebkitUserSelect: 'none'
+                }}
+            >
                 {/* Área de Arrastar (a letra) */}
                 <div className="flex flex-col items-center">
                     <p className="text-2xl font-bold text-[var(--text-color)] mb-4">
                         {t('drag_the_letter_instruction', { letter: currentItem.display })}
                     </p>
                     <Draggable id={currentItem.display}>
-                        <div className="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center text-6xl font-black text-sky-600 cursor-grab active:cursor-grabbing">
+                        <div 
+                            className="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center text-6xl font-black text-sky-600 cursor-grab active:cursor-grabbing"
+                            style={{
+                                touchAction: 'none',
+                                userSelect: 'none'
+                            }}
+                        >
                             {currentItem.display}
                         </div>
                     </Draggable>
-                </div>
-
-                {/* Mensagem de Feedback */}
-                <div className="h-16 flex items-center">
-                    {isCorrect === true && <p className="text-3xl font-bold text-green-500">{t('correct')}</p>}
-                    {isCorrect === false && <p className="text-3xl font-bold text-red-500">{t('try_again')}</p>}
-                </div>
-
-                {/* Área de Soltar (as imagens) */}
-                <div className="grid grid-cols-3 gap-4 w-full max-w-2xl">
-                    {shuffledTargets.map(target => (
-                        <Droppable key={target.display} id={target.display} className="aspect-square">
-                            <div className="bg-white w-full h-full rounded-2xl shadow-lg p-2 flex flex-col items-center justify-center">
-                                <img src={target.image} alt={t(target.textKey)} className="max-w-full max-h-24 object-contain" />
-                                <p className="text-xl font-bold mt-2 text-gray-700">{t(target.textKey)}</p>
-                            </div>
-                        </Droppable>
-                    ))}
-                </div>
-
-                {/* Botões de Navegação */}
-                <div className="w-full max-w-md mt-6 flex justify-around items-center">
-                    <button onClick={onGoHome} className="nav-button bg-white rounded-full p-5 shadow-lg text-gray-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" viewBox="0 0 24 24" fill="currentColor"><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"/></svg>
-                    </button>
-                    {isCorrect && (
-                        <button onClick={handleNext} className="bg-green-500 text-white font-bold py-4 px-8 rounded-full shadow-lg text-2xl">
-                            {currentIndex === contentData.abc.length - 1 ? <StarIcon className="w-8 h-8"/> : t('next')}
-                        </button>
-                    )}
                 </div>
             </div>
         </DndContext>
